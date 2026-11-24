@@ -1,0 +1,6 @@
+# Automatic HTTPS (Let's Encrypt) in front of the Nginx edge.
+# DOMAIN comes from .env, e.g. DOMAIN=sho.example.com
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy nginx:80
+}
